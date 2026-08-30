@@ -1,0 +1,73 @@
+{
+  "stage": "0",
+  "fixture": true,
+  "question": "Does the NWI lake belt get more NDJFM snow days and snow inches than inland Indiana on the same winters?",
+  "source": "fixture",
+  "units": "inches",
+  "n_pairs": 24,
+  "mean_delta_in": 35.59999999999998,
+  "mean_delta_days": 25.0,
+  "share_belt_gt_inland_in": 1.0,
+  "share_belt_gt_inland_days": 1.0,
+  "normals": {
+    "USW00014848": 40.0,
+    "USC00124837": 42.0,
+    "USC00124244": 38.0,
+    "USW00093819": 20.0
+  },
+  "station_means": [
+    {
+      "station_id": "USW00014848",
+      "city": "South Bend",
+      "lat": 41.7072,
+      "lon": -86.3164,
+      "n": 8,
+      "mean_belt_in": 40.79999999999998,
+      "mean_inland_in": 5.200000000000002,
+      "mean_delta_in": 35.59999999999998,
+      "mean_delta_days": 25.0
+    },
+    {
+      "station_id": "USC00124837",
+      "city": "LaPorte",
+      "lat": 41.6117,
+      "lon": -86.7297,
+      "n": 8,
+      "mean_belt_in": 40.79999999999998,
+      "mean_inland_in": 5.200000000000002,
+      "mean_delta_in": 35.59999999999998,
+      "mean_delta_days": 25.0
+    },
+    {
+      "station_id": "USC00124244",
+      "city": "Indiana Dunes",
+      "lat": 41.6317,
+      "lon": -87.0881,
+      "n": 8,
+      "mean_belt_in": 40.79999999999998,
+      "mean_inland_in": 5.200000000000002,
+      "mean_delta_in": 35.59999999999998,
+      "mean_delta_days": 25.0
+    },
+    {
+      "station_id": "USW00093819",
+      "city": "Indianapolis",
+      "lat": 39.7075,
+      "lon": -86.2803,
+      "n": 8,
+      "mean_belt_in": 5.200000000000002,
+      "mean_inland_in": 5.200000000000002,
+      "mean_delta_in": 0.0,
+      "mean_delta_days": 0.0
+    }
+  ],
+  "named_miss": [],
+  "cocorahs_snow": "skipped",
+  "liquid_as_snow": false,
+  "p_sfha_feature": false,
+  "p_sfha_label": false,
+  "figures": [
+    "scatter.png",
+    "station_map.png"
+  ]
+}

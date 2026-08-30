@@ -1,0 +1,88 @@
+{
+  "stage": "C",
+  "fixture": false,
+  "question": "Does the NWI lake belt get more NDJFM snow days and snow inches than inland Indiana on the same winters?",
+  "source": "live",
+  "units": "inches",
+  "n_pairs": 40,
+  "mean_delta_in": 31.81200787401575,
+  "mean_delta_days": 9.55,
+  "share_belt_gt_inland_in": 0.95,
+  "share_belt_gt_inland_days": 0.875,
+  "normals": {
+    "USW00014848": 63.300000000000004,
+    "USC00124837": 63.9,
+    "USC00124244": 39.699999999999996,
+    "USW00093819": 25.200000000000003
+  },
+  "station_means": [
+    {
+      "station_id": "USW00014848",
+      "city": "South Bend",
+      "lat": 41.7072,
+      "lon": -86.3164,
+      "n": 14,
+      "mean_belt_in": 58.48987626546682,
+      "mean_inland_in": 18.433633295838025,
+      "mean_delta_in": 40.0562429696288,
+      "mean_delta_days": 16.928571428571427
+    },
+    {
+      "station_id": "USC00124837",
+      "city": "LaPorte",
+      "lat": 41.6117,
+      "lon": -86.7297,
+      "n": 15,
+      "mean_belt_in": 60.95013123359581,
+      "mean_inland_in": 20.908136482939636,
+      "mean_delta_in": 40.04199475065617,
+      "mean_delta_days": 9.333333333333334
+    },
+    {
+      "station_id": "USC00124244",
+      "city": "Indiana Dunes",
+      "lat": 41.6317,
+      "lon": -87.0881,
+      "n": 11,
+      "mean_belt_in": 32.42304939155333,
+      "mean_inland_in": 22.32641374373658,
+      "mean_delta_in": 10.09663564781675,
+      "mean_delta_days": 0.45454545454545453
+    },
+    {
+      "station_id": "USW00093819",
+      "city": "Indianapolis",
+      "lat": 39.7075,
+      "lon": -86.2803,
+      "n": 15,
+      "mean_belt_in": 20.908136482939636,
+      "mean_inland_in": 20.908136482939636,
+      "mean_delta_in": 0.0,
+      "mean_delta_days": 0.0
+    }
+  ],
+  "named_miss": [
+    {
+      "station_id": "USC00125604",
+      "city": "Michigan City",
+      "reason": "no complete NDJFM SNOW in 2011-2025"
+    },
+    {
+      "station_id": "USW00004846",
+      "city": "Valparaiso",
+      "reason": "no complete NDJFM SNOW in 2011-2025"
+    }
+  ],
+  "cocorahs_snow": "skipped",
+  "liquid_as_snow": false,
+  "p_sfha_feature": false,
+  "p_sfha_label": false,
+  "figures": [
+    "scatter.png",
+    "station_map.png"
+  ],
+  "live": {
+    "n_stations": 4,
+    "product": "GHCND SNOW"
+  }
+}
