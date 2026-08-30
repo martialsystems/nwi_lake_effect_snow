@@ -2,6 +2,7 @@
   "stage": "0",
   "fixture": true,
   "question": "Does the NWI lake belt get more NDJFM snow days and snow inches than inland Indiana on the same winters?",
+  "science_sha": "82ce0ce",
   "source": "fixture",
   "units": "inches",
   "n_pairs": 24,
@@ -61,11 +62,26 @@
       "mean_delta_days": 0.0
     }
   ],
-  "named_miss": [],
+  "named_miss": [
+    {
+      "station_id": "USC00125604",
+      "city": "Michigan City",
+      "reason": "no complete NDJFM SNOW in 2011-2025"
+    },
+    {
+      "station_id": "USW00004846",
+      "city": "Valparaiso",
+      "reason": "no complete NDJFM SNOW in 2011-2025"
+    }
+  ],
+  "used_elements": [
+    "SNOW"
+  ],
   "cocorahs_snow": "skipped",
   "liquid_as_snow": false,
   "p_sfha_feature": false,
   "p_sfha_label": false,
+  "page_in_scope": false,
   "figures": [
     "scatter.png",
     "station_map.png"

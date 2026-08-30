@@ -38,6 +38,7 @@ AMOUNT_SHA = "ac36f0f"
 JJA_MISS_SHA = "1416da1"
 WINTER_LAKE_SHA = "6b47f21"
 DJF_SNOW_SHA = "9aa7935"
+SCIENCE_SHA = "82ce0ce"
 REPO_ROOT = Path(__file__).resolve().parents[2]
 FIXTURE_SCATTER_SUBTITLE = (
     "Fixture planted lake-belt snow over Indianapolis. Does not rescue live."

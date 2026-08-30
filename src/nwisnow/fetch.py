@@ -25,8 +25,10 @@ def fetch_live(cache_dir: Path, getter: Callable[[str], bytes] = get_bytes) -> d
     winters: dict[str, dict[int, dict[str, Any]]] = {}
     normals: dict[str, float] = {}
     stations: dict[str, dict[str, Any]] = {}
+    used: set[str] = set()
     for sid, city in wanted:
-        days = load_station_csv(sid, cache_dir, getter=getter)
+        days, el = load_station_csv(sid, cache_dir, getter=getter)
+        used.update(el)
         w = winter_totals(days)
         if not w:
             raise FetchError("no complete NDJFM SNOW winters {0}".format(sid))
@@ -44,6 +46,7 @@ def fetch_live(cache_dir: Path, getter: Callable[[str], bytes] = get_bytes) -> d
             {"station_id": sid, "city": city, "reason": "no complete NDJFM SNOW in 2011-2025"}
             for sid, city in NAMED_MISS
         ],
+        "used_elements": sorted(used),
         "cocorahs_snow": "skipped",
         "liquid_as_snow": False,
         "product": "GHCND SNOW",

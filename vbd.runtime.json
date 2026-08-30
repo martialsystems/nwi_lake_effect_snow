@@ -11,6 +11,12 @@
       "argv": [".venv/bin/python", "scripts/run_fixture.py", "logs/stage0_fixture"],
       "timeout_s": 120,
       "paths": ["src/**", "scripts/**", "tests/**"]
+    },
+    {
+      "id": "lakeforge-sanity",
+      "argv": [".venv/bin/python", "lakeforge/scripts/sanity_lakeforge.py"],
+      "timeout_s": 60,
+      "paths": ["lakeforge/**", "tests/test_lakeforge_laws.py"]
     }
   ]
 }

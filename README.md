@@ -2,9 +2,7 @@
 
 Does the NWI lake belt get more NDJFM snow days and snow inches than inland Indiana on the same winters?
 
-Yes. On 40 paired station-winters (NDJFM 2010-11 through 2024-25), the belt averaged 31.81 in more snow than Indianapolis and 9.55 more snow days. The belt was snowier in inches in 0.95 of those pairs. Snow depth, not liquid.
-
-Michigan City GHCND `USC00125604` and Valparaiso Porter County Airport `USW00004846` have no complete NDJFM SNOW in that window. The belt that can be scored is South Bend, LaPorte, and Indiana Dunes NP. CoCoRaHS snow was skipped; daily liquid is not a snow label.
+Yes. Locked `82ce0ce`. South Bend, LaPorte, and Indiana Dunes NP averaged +31.81 in and +9.55 snow days versus Indianapolis on the same 40 winters. 0.95 of pairs go the same way. Michigan City `USC00125604` and Valparaiso `USW00004846` do not have complete NDJFM SNOW. The belt is those three stations. Dunes days barely move (+0.45) while inches still do (+10.10): that station is fatter storms, not more snow days. Snow depth, not liquid. CoCoRaHS snow was skipped; daily liquid is not a snow label.
 
 Amount science `ac36f0f`, JJA miss `1416da1`, winter-lake miss `6b47f21`, and DJF snow holdout `9aa7935` stay frozen. GaugeCorr stays out.
 
@@ -53,5 +51,6 @@ Do not use stock `/usr/bin/python3 -m pytest`. Empty GHCND SNOW at a pinned belt
 | [AGENTS.md](AGENTS.md) | Agent rules |
 | [CHECKLIST.md](CHECKLIST.md) | Operator list |
 | `src/nwisnow/` | GHCND SNOW, NDJFM totals, paired inland contrast, figures |
+| `lakeforge/` | GraphForge pin |
 
 MIT. Martial Systems LLC.

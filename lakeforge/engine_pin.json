@@ -1,0 +1,11 @@
+{
+  "engine": "graphforge",
+  "github": "martialsystems/graphforge",
+  "track": "main",
+  "remote": "origin",
+  "min_version": "0.6.0",
+  "policy": "report_only",
+  "local_candidates": ["~/graphforge"],
+  "require_product_laws": true,
+  "note": "NWI lake snow: GHCND SNOW only; 80% completeness; Indianapolis same-winter bar; named MC/Valpo holes; no p_sfha and no winter-page hero inches. Verify-before-done is the finish gate."
+}

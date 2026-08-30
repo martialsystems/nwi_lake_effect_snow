@@ -2,7 +2,8 @@
 from pathlib import Path
 
 from nwisnow.claims import scan_text
-from nwisnow.config import INDEX_GIST, PRECIP_GIST, QUESTION
+from nwisnow.config import INDEX_GIST, PRECIP_GIST, QUESTION, SCIENCE_SHA
+from nwisnow.hero import hero_logs_named_holes, readme_hero
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -11,11 +12,18 @@ def test_readme_opens_with_the_question() -> None:
     text = (REPO / "README.md").read_text(encoding="utf-8")
     body = "\n".join(text.splitlines()[1:]).lstrip()
     assert body.startswith(QUESTION)
-    assert "31.81" in text
-    assert "9.55" in text
-    assert "0.95" in text
-    assert "USC00125604" in text
-    assert "USW00004846" in text
+    hero = readme_hero(text)
+    assert SCIENCE_SHA in hero
+    assert "31.81" in hero
+    assert "9.55" in hero
+    assert "0.95" in hero
+    assert "+0.45" in hero
+    assert "+10.10" in hero
+    assert "three stations" in hero
+    assert "fatter storms" in hero
+    assert hero_logs_named_holes(text)
+    assert "USC00125604" in hero
+    assert "USW00004846" in hero
     assert "ac36f0f" in text
     assert "1416da1" in text
     assert "6b47f21" in text

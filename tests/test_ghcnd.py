@@ -1,7 +1,7 @@
 # Copyright (c) 2026 Martial Systems LLC
 from datetime import date
 
-from nwisnow.ghcnd import parse_snow_daily, snow_in_from_mm, winter_totals
+from nwisnow.ghcnd import parse_snow_daily, parse_snow_pack, snow_in_from_mm, winter_totals
 from nwisnow.labels import is_snow_day
 
 
@@ -11,7 +11,8 @@ def test_prcp_rows_are_not_snow() -> None:
         "USC00125604,20110101,SNOW,25,,,\n"
         "USC00125604,20110102,SNOW,-9999,,,\n"
     )
-    rows = parse_snow_daily(text)
+    rows, used = parse_snow_pack(text)
+    assert used == frozenset({"SNOW"})
     assert len(rows) == 1
     assert rows[0][0] == date(2011, 1, 1)
     assert abs(snow_in_from_mm(25.0) - rows[0][1]) < 1e-9

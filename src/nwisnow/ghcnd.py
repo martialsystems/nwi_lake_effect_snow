@@ -20,8 +20,10 @@ def snow_in_from_mm(raw: float) -> float:
     return float(raw) / MM_PER_INCH
 
 
-def parse_snow_daily(text: str) -> list[tuple[date, float]]:
+def parse_snow_pack(text: str) -> tuple[list[tuple[date, float]], frozenset[str]]:
+    """Ingest GHCND SNOW only. Any other element that reaches `used` is a swap."""
     rows: list[tuple[date, float]] = []
+    used: set[str] = set()
     for rec in csv.reader(io.StringIO(text)):
         if len(rec) < 4:
             continue
@@ -40,11 +42,19 @@ def parse_snow_daily(text: str) -> list[tuple[date, float]]:
         day = date.fromisoformat("{0}-{1}-{2}".format(rec[1][0:4], rec[1][4:6], rec[1][6:8]))
         if day.month not in NDJFM_MONTHS:
             continue
+        used.add("SNOW")
         rows.append((day, snow_in_from_mm(float(raw))))
+    return rows, frozenset(used)
+
+
+def parse_snow_daily(text: str) -> list[tuple[date, float]]:
+    rows, _used = parse_snow_pack(text)
     return rows
 
 
-def load_station_csv(sid: str, cache_dir: Path, getter: Callable[[str], bytes] = get_bytes) -> list[tuple[date, float]]:
+def load_station_csv(
+    sid: str, cache_dir: Path, getter: Callable[[str], bytes] = get_bytes
+) -> tuple[list[tuple[date, float]], frozenset[str]]:
     cache_dir.mkdir(parents=True, exist_ok=True)
     path = cache_dir / "{0}.csv.gz".format(sid)
     if not path.is_file() or path.stat().st_size == 0:
@@ -53,10 +63,10 @@ def load_station_csv(sid: str, cache_dir: Path, getter: Callable[[str], bytes] =
             raise FetchError("empty GHCND {0}".format(sid))
         path.write_bytes(body)
     raw = gzip.decompress(path.read_bytes()).decode("utf-8", errors="replace")
-    rows = parse_snow_daily(raw)
+    rows, used = parse_snow_pack(raw)
     if not rows:
         raise FetchError("empty GHCND SNOW {0}".format(sid))
-    return rows
+    return rows, used
 
 
 def winter_totals(days: list[tuple[date, float]]) -> dict[int, dict[str, Any]]:

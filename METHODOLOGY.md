@@ -8,7 +8,9 @@ GHCND `SNOW` (depth), inches. Not `PRCP`. Not liquid equivalent. Season is Nov 1
 
 ## Stations
 
-Belt scored: South Bend `USW00014848`, LaPorte `USC00124837`, Indiana Dunes NP `USC00124244`.
+Science lock `82ce0ce`.
+
+Belt scored: South Bend `USW00014848`, LaPorte `USC00124837`, Indiana Dunes NP `USC00124244`. The belt is those three stations.
 
 Named holes: Michigan City `USC00125604` and Valparaiso Porter County Airport `USW00004846` have no complete NDJFM SNOW in 2011-2025. Do not substitute their liquid catch.
 

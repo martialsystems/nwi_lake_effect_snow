@@ -6,7 +6,7 @@ from __future__ import annotations
 from datetime import date, timedelta
 from typing import Any
 
-from nwisnow.config import BELT_STATIONS, INLAND_STATION, SAMPLE_FIRST_WINTER
+from nwisnow.config import BELT_STATIONS, INLAND_STATION, NAMED_MISS, SAMPLE_FIRST_WINTER
 from nwisnow.ghcnd import winter_totals
 from nwisnow.labels import winter_id_of
 
@@ -63,6 +63,11 @@ def build_fixture() -> dict[str, Any]:
         "stations": stations,
         "winters": winters,
         "normals": normals,
+        "named_miss": [
+            {"station_id": sid, "city": city, "reason": "no complete NDJFM SNOW in 2011-2025"}
+            for sid, city in NAMED_MISS
+        ],
+        "used_elements": ["SNOW"],
         "cocorahs_snow": "skipped",
         "liquid_as_snow": False,
     }
