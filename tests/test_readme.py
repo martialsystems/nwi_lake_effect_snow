@@ -2,7 +2,7 @@
 from pathlib import Path
 
 from nwisnow.claims import scan_text
-from nwisnow.config import INDEX_GIST, PRECIP_GIST, QUESTION, SCIENCE_SHA
+from nwisnow.config import PRECIP_GIST, QUESTION, SCIENCE_SHA
 from nwisnow.hero import hero_logs_named_holes, readme_hero
 
 REPO = Path(__file__).resolve().parents[1]
@@ -28,7 +28,12 @@ def test_readme_opens_with_the_question() -> None:
     assert "1416da1" in text
     assert "6b47f21" in text
     assert "9aa7935" in text
-    assert INDEX_GIST.split("/")[-1] in text
+    assert "Open_the_research_console-2e7d32" in text
+    assert "martialsystems.github.io/indiana_wx_pages" in text
+    assert any(
+        "[![Precip writeup]" in line and "[![Open the research console]" in line
+        for line in text.splitlines()
+    )
     assert PRECIP_GIST.split("/")[-1] in text
     assert ".github/blob/main/RESEARCH.md" not in text
     assert "scatter.png" in text
