@@ -6,7 +6,7 @@ Yes. Locked `82ce0ce`. South Bend, LaPorte, and Indiana Dunes NP averaged +31.81
 
 Amount science `ac36f0f`, JJA miss `1416da1`, winter-lake miss `6b47f21`, and DJF snow holdout `9aa7935` stay frozen. GaugeCorr stays out.
 
-[![Precip writeup](https://img.shields.io/badge/Precip_writeup-2e7d32?style=for-the-badge)](https://gist.github.com/martialsystems/b5f900aad37487bb8c0206a321c1ed5c) [![Open the research console](https://img.shields.io/badge/Open_the_research_console-2e7d32?style=for-the-badge)](https://martialsystems.github.io/indiana_wx_pages/)
+[Precip writeup](https://gist.github.com/martialsystems/b5f900aad37487bb8c0206a321c1ed5c)
 
 ![Figure 1. Paired scatter](logs/in_live/scatter.png)
 
@@ -51,5 +51,7 @@ Do not use stock `/usr/bin/python3 -m pytest`. Empty GHCND SNOW at a pinned belt
 | [CHECKLIST.md](CHECKLIST.md) | Operator list |
 | `src/nwisnow/` | GHCND SNOW, NDJFM totals, paired inland contrast, figures |
 | `lakeforge/` | GraphForge pin |
+
+Research index: https://gist.github.com/martialsystems/66b896b0a4a0b8cba2b478aef64312f3
 
 MIT. Martial Systems LLC.
